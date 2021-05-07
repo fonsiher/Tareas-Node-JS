@@ -17,7 +17,7 @@ switch (comando) {
     case 'actualizar':
         console.log("Actualizando una tarea...")
         actualizar(argv.descripcion, argv.completado)
-        console.log("--------Lista Actualizada-------".blue);
+        console.log("--------Lista-------".blue);
         listar();
         break;
 

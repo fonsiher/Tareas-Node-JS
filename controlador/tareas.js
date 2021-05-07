@@ -58,9 +58,10 @@ const actualizar = (descripcion, completado = true) => {
         }
         tareasHacer[index].completado = (completado);
         guardarDatos();
+        return console.log(`La Tarea: "${descripcion}" ha sido actualizada correctamente`.yellow);
+    } else {
+        return console.log(`La Tarea: "${descripcion}" no se pudo encontrar`.bgMagenta);
     }
-
-    return console.log(`La Tarea: "${descripcion}" ha sido actualizada correctamente`.yellow);
 
 }
 
@@ -76,7 +77,5 @@ const eliminar = (descripcion) => {
     }
 
 }
-
-
 
 module.exports = { crear, listar, actualizar, eliminar }
