@@ -6,16 +6,16 @@ let comando = argv._[0]; // trae del objeto el comando alias
 
 switch (comando) {
     case 'crear':
-        console.log("creando tarea...");
+        console.log("creando tarea...".bgCyan);
         let tarea = crear(argv.descripcion)
         console.log(tarea);
         break;
     case 'listar':
-        console.log("Mostrando la lista de tareas...");
+        console.log("Mostrando la lista de tareas...".bgCyan);
         listar();
         break;
     case 'actualizar':
-        console.log("Actualizando una tarea...")
+        console.log("Actualizando una tarea...".bgCyan)
         actualizar(argv.descripcion, argv.completado)
         console.log("--------Lista-------".blue);
         listar();

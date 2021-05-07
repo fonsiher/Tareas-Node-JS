@@ -38,9 +38,9 @@ const listar = () => {
     i = 1
     for (let tareas of tareasHacer) {
         if (tareas.completado == false) {
-            console.log(`Tarea: ${i} Descripcion: ${tareas.descripcion},  Completado: ${tareas.completado}`.red);
+            console.log(`Tarea: ${i} Descripcion: ${tareas.descripcion},  Completado: ${tareas.completado}`.bgRed);
         } else {
-            console.log(`Tarea: ${i} Descripcion: ${tareas.descripcion},  Completado: ${tareas.completado}`.green);
+            console.log(`Tarea: ${i} Descripcion: ${tareas.descripcion},  Completado: ${tareas.completado}`.bgGreen);
         }
 
         i += 1
