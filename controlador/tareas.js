@@ -21,20 +21,23 @@ const leerDatos = () => {
 
 const crear = (descripcion) => {
     leerDatos();
-    let tarea = {
-        descripcion,
-        completado: false
+    let index = tareasHacer.findIndex(task => task.descripcion == descripcion);
+    if (index >= 0) {
+        return console.log(`La Tarea: "${descripcion}" ya existe en la lista`.bgRed);
+    } else {
+        let tarea = {
+            descripcion,
+            completado: false
+        }
+        tareasHacer.push(tarea);
+        guardarDatos();
+        return console.log(`La Tarea: "${tarea.descripcion}- Estado: ${tarea.completado}" ha sido agregada correctamente`.green);
     }
-    tareasHacer.push(tarea);
-    guardarDatos();
-    return tarea
 }
 
 const listar = () => {
     leerDatos();
-    // var obj = JSON.parse(valores);
-    /* console.log(valores);
-    console.log(valores.length); */
+
     i = 1
     for (let tareas of tareasHacer) {
         if (tareas.completado == false) {
@@ -60,7 +63,7 @@ const actualizar = (descripcion, completado = true) => {
         guardarDatos();
         return console.log(`La Tarea: "${descripcion}" ha sido actualizada correctamente`.yellow);
     } else {
-        return console.log(`La Tarea: "${descripcion}" no se pudo encontrar`.bgMagenta);
+        return console.log(`La Tarea: "${descripcion}" no se pudo encontrar dentro de tu lista`.bgMagenta);
     }
 
 }
@@ -73,7 +76,7 @@ const eliminar = (descripcion) => {
         guardarDatos();
         return console.log(`La Tarea: "${descripcion}" ha sido eliminada correctamente`.bgGreen);
     } else {
-        return console.log(`La Tarea: "${descripcion}" no se encuentra en la lista`.bgMagenta);
+        return console.log(`La Tarea: "${descripcion}" no se encuentra en tu lista de tareas`.bgMagenta);
     }
 
 }
